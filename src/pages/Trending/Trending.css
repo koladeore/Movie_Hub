@@ -1,0 +1,28 @@
+.trending {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.5rem;
+  cursor: pointer;
+}
+@media (max-width: 1200px) {
+  .trending {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .trending {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+}
+@media (max-width: 640px) {
+  .trending {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1rem;
+  }
+}

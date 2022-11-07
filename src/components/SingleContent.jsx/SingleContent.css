@@ -1,0 +1,36 @@
+.posters {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.posters:hover {
+  transform: scale(1.1, 1.1);
+}
+.poster-content {
+  margin-top: 1rem;
+  background-color: #f4f4f4;
+  height: 420px;
+  border-radius: 10px;
+}
+.poster-content img {
+  width: 100%;
+  object-fit: cover;
+  height: 300px;
+  border-radius: 10px 10px 0px 0px;
+}
+.poster-content h2 {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-size: 20px;
+}
+.poster-content span {
+  display: flex;
+  margin: 1rem;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: lighter;
+}
+.poster-content span h3 {
+  color: #a9a9a9;
+  font-size: 15px;
+  font-weight: bold;
+}

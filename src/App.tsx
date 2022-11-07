@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Header } from './components/Header/Header'
+import { Trending } from './pages/Trending/Trending'
+import { Movies } from './pages/Movies/Movies'
+import { Series } from './pages/Series/Series'
+import { NotFound } from './pages/NotFound/NotFound'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <div className="">
+        <Header />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Trending />} />
+            <Route path="/movies" element={<Movies />} />
+            <Route path="/series" element={<Series />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
