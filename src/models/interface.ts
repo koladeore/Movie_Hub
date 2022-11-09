@@ -15,3 +15,12 @@ export interface TrendingProps {
   media_type: string
   vote_average: string
 }
+export interface SetPageProps {
+  setPage: (page: number) => void
+  numOfPages: number
+  page: number
+}
+export interface PageProps{
+  selected: number
+}
+
