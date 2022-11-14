@@ -5,7 +5,7 @@ import { Trending } from './pages/Trending/Trending'
 import { Movies } from './pages/Movies/Movies'
 import { Series } from './pages/Series/Series'
 import { NotFound } from './pages/NotFound/NotFound'
-import { Search }  from './pages/Search/Search'
+import { Search } from './pages/Search/Search'
 
 function App() {
   return (

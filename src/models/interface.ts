@@ -23,6 +23,9 @@ export interface SetPageProps {
 export interface PageProps {
   selected: number
 }
-export interface stateProps{
+export interface stateProps {
   state: string
+}
+export interface ErrorProps {
+  message: (e: string) => void
 }
