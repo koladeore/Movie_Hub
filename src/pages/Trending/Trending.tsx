@@ -5,19 +5,22 @@ import { TrendingProps } from '../../models/interface'
 import CustomPagination from '../../components/Pagination/CustomPagination'
 import axios from 'axios'
 
+
 export const Trending = () => {
-  const [page, setPage] = useState<number>(1);
+  const [page, setPage] = useState<number>(1)
   const [content, setContent] = useState<TrendingProps[]>([])
+  const [numOfPages, setNumOfPages] = useState(0)
   const fetchTrending = async () => {
     const { data } = await axios.get(
       `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
     )
     setContent(data.results)
+    setNumOfPages(data.total_pages)
   }
   useEffect(() => {
     window.scroll(0, 0)
     fetchTrending()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page])
 
   return (
@@ -34,9 +37,12 @@ export const Trending = () => {
               media_type={c.media_type}
               vote_average={c.vote_average}
             />
-          ))}
+          ))}  
       </div>
-      <CustomPagination setPage={setPage} numOfPages={10} page={page}/>
+      {!content.length && <h2 className='noTrending'>No Content Found</h2>}
+      {numOfPages > 1 && (
+        <CustomPagination setPage={setPage} numOfPages={numOfPages} page={page} />
+      )}
     </div>
   )
 }

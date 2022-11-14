@@ -1,30 +1,30 @@
-.trending {
+.search {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1.5rem;
   cursor: pointer;
 }
-.noTrending{
+.notFound{
   text-align: center;
   font-size: 40px;
   margin-top: 0;
 }
 @media (max-width: 1200px) {
-  .trending {
+  .search {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1.5rem;
   }
 }
 @media (max-width: 768px) {
-  .trending {
+  .search {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
   }
 }
 @media (max-width: 640px) {
-  .trending {
+  .search {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 1rem;

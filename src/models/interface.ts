@@ -20,7 +20,9 @@ export interface SetPageProps {
   numOfPages: number
   page: number
 }
-export interface PageProps{
+export interface PageProps {
   selected: number
 }
-
+export interface stateProps{
+  state: string
+}

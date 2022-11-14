@@ -8,7 +8,7 @@
 .poster-content {
   margin-top: 1rem;
   background-color: #f4f4f4;
-  height: 410px;
+  height: 450px;
   border-radius: 10px;
 }
 .poster-content img {
@@ -33,4 +33,16 @@
   color: #a9a9a9;
   font-size: 15px;
   font-weight: bold;
+}
+@media (max-width: 640px) {
+  .poster-content{
+    height: 530px;
+    margin-bottom: 2rem;
+    width: 60%;
+    margin-left: 4rem;
+  }
+  .poster-content  img{
+    height: 400px;
+    width: 100%;
+  }
 }

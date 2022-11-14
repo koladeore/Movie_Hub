@@ -9,12 +9,19 @@ import {
   BiUser,
   BiTrain,
 } from 'react-icons/bi'
-import { AiFillHome } from 'react-icons/ai'
+import { Link, useNavigate } from 'react-router-dom'
 // import ReactSwitch from 'react-switch'
 
 Modal.setAppElement('#root')
 export const Header = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [value, setValue] = useState('')
+  const navigate = useNavigate()
+  const handleSearch = (e: { key: string }) => {
+    if (value && e.key === 'Enter') {
+      navigate('/search', { state: value, replace: true })
+    }
+  }
   return (
     <div>
       <div className="header">
@@ -25,11 +32,20 @@ export const Header = () => {
             className="menu-bar"
             onClick={() => setModalIsOpen(true)}
           />
-          <h1 className="logo">Watch.io</h1>
+          <Link to="./" className="logo">
+            Watch.io
+          </Link>
         </div>
         <div className="search">
-          <BiSearch className="search-icon" color="#595959" size="2.5rem" />
-          <input type="text" className="search-input" placeholder="Search" />
+          <BiSearch className="search-icon" color="#595959" size="1.5rem" />
+          <input
+            type="text"
+            className="search-input"
+            placeholder="Search"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            onKeyDown={handleSearch}
+          />
         </div>
         <div className="btn">
           <button>Sign Up</button>
@@ -61,68 +77,58 @@ export const Header = () => {
                   onClick={() => setModalIsOpen(false)}
                 />
               </button>
-              <h1 className="logo-sideBar">Watch.io</h1>
+              <Link to="./" className="logo-sidebar">
+                Watch.io
+              </Link>
             </div>
             <div className="btn-list">
               <ul>
                 <li>
                   <div className="link_button">
-                    <button className="btn-link">
-                      <AiFillHome
-                        color="#ffffff"
-                        size="1.2rem"
-                        className="link_icon"
-                      />
-                      <span className="span-button">Home</span>
-                    </button>
-                  </div>
-                </li>
-                <li>
-                  <div className="link_button">
-                    <button className="btn-link">
+                    <Link
+                      to="./"
+                      className="btn-link"
+                      onClick={() => setModalIsOpen(false)}
+                    >
                       <BiBarChartAlt
                         color="#ffffff"
-                        size="1.2rem"
+                        size="1.4rem"
                         className="link_icon"
                       />
-                      <span className="span-button">Trending</span>
-                    </button>
+                      <span className="span-link">Trending</span>
+                    </Link>
                   </div>
                 </li>
                 <li>
                   <div className="link_button">
-                    <button className="btn-link">
+                    <Link
+                      to="./movies"
+                      className="btn-link"
+                      onClick={() => setModalIsOpen(false)}
+                    >
                       <BiChalkboard
                         color="#ffffff"
-                        size="1.2rem"
+                        size="1.4rem"
                         className="link_icon"
                       />
-                      <span className="span-button">Tv Shows</span>
-                    </button>
+                      <span className="span-link">Movies</span>
+                    </Link>
                   </div>
                 </li>
                 <li>
                   <div className="link_button">
-                    <button className="btn-link">
+                    <Link
+                      to="./"
+                      className="btn-link"
+                      onClick={() => setModalIsOpen(false)}
+                    >
                       <BiTrain
                         color="#ffffff"
                         size="1.2rem"
                         className="link_icon"
                       />
-                      <span className="span-button">Animation</span>
-                    </button>
-                  </div>
-                </li>
-                <li>
-                  <div className="link_button">
-                    <button className="btn-link">
-                      <BiUser
-                        color="#ffffff"
-                        size="1.2rem"
-                        className="link_icon"
-                      />
-                      <span className="span-button">Log Out</span>
-                    </button>
+                      <span className="span-link">Tv Series</span>
+                    </Link>
                   </div>
                 </li>
               </ul>

@@ -1,19 +1,18 @@
-html,
-body,
 * {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 .App {
   width: 100vw;
   height: 100vh;
 }
-#light {
+.content{
+  padding-top: 130px;
+  padding-bottom: 70px;
+  background-color:#e1e1e1;
+}
+/* #light {
   background-color: #ffffff;
 }
 #dark {
   background-color: #292929;
-}
+} */
