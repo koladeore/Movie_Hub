@@ -6,11 +6,9 @@ import {
   BiSearch,
   BiBarChartAlt,
   BiChalkboard,
-  BiUser,
   BiTrain,
 } from 'react-icons/bi'
 import { Link, useNavigate } from 'react-router-dom'
-// import ReactSwitch from 'react-switch'
 
 Modal.setAppElement('#root')
 export const Header = () => {
@@ -50,16 +48,6 @@ export const Header = () => {
         <div className="btn">
           <button>Sign Up</button>
         </div>
-        {/* <div className="switch">
-          <label>Mode</label>
-          <ReactSwitch
-            onChange={toggleTheme}
-            checked={theme === "light"}
-            className="switch-icon"
-            width={50}
-            height={20}
-          />
-        </div> */}
       </div>
       <div>
         <Modal
@@ -118,7 +106,7 @@ export const Header = () => {
                 <li>
                   <div className="link_button">
                     <Link
-                      to="./"
+                      to="./series"
                       className="btn-link"
                       onClick={() => setModalIsOpen(false)}
                     >

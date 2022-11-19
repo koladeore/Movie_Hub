@@ -1,7 +1,7 @@
 import './Trending.css'
 import SingleContent from '../../components/SingleContent.jsx/SingleContent'
 import { useState, useEffect } from 'react'
-import { TrendingProps } from '../../models/interface'
+import { PageProps } from '../../models/interface'
 import CustomPagination from '../../components/Pagination/CustomPagination'
 import axios from 'axios'
 import { LoadingSpinner } from '../../components/Spinner/LoadingSpinner'
@@ -9,7 +9,7 @@ import { LoadingSpinner } from '../../components/Spinner/LoadingSpinner'
 export const Trending = () => {
   const [page, setPage] = useState<number>(1)
   const [isLoading, setIsLoading] = useState<boolean>(false)
-  const [content, setContent] = useState<TrendingProps[]>([])
+  const [content, setContent] = useState<PageProps[]>([])
   const [numOfPages, setNumOfPages] = useState(0)
   const fetchTrending = async () => {
     const { data } = await axios.get(
@@ -22,7 +22,7 @@ export const Trending = () => {
   useEffect(() => {
     window.scroll(0, 0)
     setIsLoading(true)
-    fetchTrending() 
+    fetchTrending()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page])
   const renderContent = (
@@ -33,7 +33,7 @@ export const Trending = () => {
             key={c.id}
             id={c.id}
             poster={c.poster_path}
-            title={c.title}
+            title={c.title || c.name}
             date={c.first_air_date || c.release_date}
             media_type={c.media_type}
             vote_average={c.vote_average}
@@ -43,8 +43,8 @@ export const Trending = () => {
   )
   return (
     <div>
+      <h1 className='trending-text'>Trending</h1>
       {isLoading ? <LoadingSpinner /> : renderContent}
-      {/* {!content.length && <h2 className="noTrending">No Content Found</h2>} */}
       {numOfPages > 1 && (
         <CustomPagination
           setPage={setPage}

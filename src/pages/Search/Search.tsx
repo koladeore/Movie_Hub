@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { TrendingProps, stateProps } from '../../models/interface'
+import { PageProps, stateProps } from '../../models/interface'
 import { useLocation } from 'react-router-dom'
 import CustomPagination from '../../components/Pagination/CustomPagination'
 import SingleContent from '../../components/SingleContent.jsx/SingleContent'
@@ -10,7 +10,7 @@ import { LoadingSpinner } from '../../components/Spinner/LoadingSpinner'
 export const Search = () => {
   const [page, setPage] = useState<number>(1)
   const [isLoading, setIsLoading] = useState<boolean>(false)
-  const [content, setContent] = useState<TrendingProps[]>([])
+  const [content, setContent] = useState<PageProps[]>([])
   const [numOfPages, setNumOfPages] = useState(0)
   const { state }: stateProps = useLocation()
   const fetchSearch = async () => {
