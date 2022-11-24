@@ -2,14 +2,17 @@ import './SingleContent.css'
 import { singleContentProps } from '../../models/interface'
 import { FC } from 'react'
 import { img_300, unavailable } from '../../config/config'
+import { Link } from 'react-router-dom'
 const SingleContent: FC<singleContentProps> = ({
+  id,
   poster,
   title,
   date,
   media_type,
 }) => {
   return (
-    <div className="posters">
+    <Link to={`/details/${id}${media_type}`}>
+      <div className="posters">
       <div className="poster-content">
         <img src={poster ? `${img_300}${poster}` : unavailable} alt={title} />
         <h2>{title}</h2>
@@ -19,6 +22,7 @@ const SingleContent: FC<singleContentProps> = ({
         </span>
       </div>
     </div>
+    </Link>
   )
 }
 

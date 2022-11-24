@@ -6,6 +6,7 @@ import { Movies } from './pages/Movies/Movies'
 import { Series } from './pages/Series/Series'
 import { NotFound } from './pages/NotFound/NotFound'
 import { Search } from './pages/Search/Search'
+import { Details } from './pages/Details/Details'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/movies" element={<Movies />} />
             <Route path="/series" element={<Series />} />
             <Route path="/search" element={<Search />} />
+            <Route path='/details/:id' element={<Details />}/>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

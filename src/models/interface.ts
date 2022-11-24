@@ -5,6 +5,7 @@ export interface singleContentProps {
   date: string
   media_type: string
   vote_average: string
+  
 }
 export interface PageProps {
   id: number
@@ -15,7 +16,13 @@ export interface PageProps {
   name: string
   media_type: string
   vote_average: string
+  // setFilterBy: (media_type: string)=> void
 }
+export interface resultProps{
+  // setFilterBy: (media_type: string)=> void
+  // setFilterBy: PageProps.media_type
+}
+
 export interface SetPageProps {
   setPage: (page: number) => void
   numOfPages: number
@@ -30,26 +37,26 @@ export interface stateProps {
 export interface ErrorProps {
   message: (e: string) => void
 }
-export interface UseGenresProps{
+export interface UseGenresProps {
   id: string | number
   name: string
 }
-export interface UseSelectedGenresProps{
+export interface UseSelectedGenresProps {
   selectedGenres: UseGenresProps[]
 }
-export interface movieGenresProps{
+export interface movieGenresProps {
   id: string | number
   name: string
 }
-export interface movieSelectedGenresProps{
+export interface movieSelectedGenresProps {
   id: string | number
   name: string
 }
-export interface selectedGenresProps{
+export interface selectedGenresProps {
   id: string | number
   name: string
 }
-export interface GenresProps{
+export interface GenresProps {
   id: string | number
   name: string
 }
@@ -62,15 +69,15 @@ export interface SetGenresProps {
   type: string
   setPage: (page: number) => void
 }
-export interface GenreProps{
+export interface GenreProps {
   id: string | number
   name: string
 }
-export interface seriesGenresProps{
+export interface seriesGenresProps {
   id: string | number
   name: string
 }
-export interface seriesSelectedGenresProps{
+export interface seriesSelectedGenresProps {
   id: string | number
   name: string
 }

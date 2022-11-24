@@ -1,7 +1,11 @@
 import './Movies.css'
 import SingleContent from '../../components/SingleContent.jsx/SingleContent'
 import { useState, useEffect } from 'react'
-import { PageProps, movieGenresProps, movieSelectedGenresProps } from '../../models/interface'
+import {
+  PageProps,
+  movieGenresProps,
+  movieSelectedGenresProps,
+} from '../../models/interface'
 import CustomPagination from '../../components/Pagination/CustomPagination'
 import axios from 'axios'
 import { LoadingSpinner } from '../../components/Spinner/LoadingSpinner'
@@ -13,7 +17,9 @@ export const Movies = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [content, setContent] = useState<PageProps[]>([])
   const [numOfPages, setNumOfPages] = useState(0)
-  const [selectedGenres, setSelectedGenres] = useState<movieSelectedGenresProps[]>([]);
+  const [selectedGenres, setSelectedGenres] = useState<
+    movieSelectedGenresProps[]
+  >([])
   const [genres, setGenres] = useState<movieGenresProps[]>([])
   const genreforURL = UseGenre(selectedGenres)
   const fetchMovies = async () => {
@@ -25,7 +31,7 @@ export const Movies = () => {
     // console.log('genresMovie', genres)
     setIsLoading(false)
   }
-  console.log('genreForUrl', genreforURL);
+  console.log('genreForUrl', genreforURL)
   useEffect(() => {
     window.scroll(0, 0)
     setIsLoading(true)
@@ -35,31 +41,31 @@ export const Movies = () => {
   const renderContent = (
     <div>
       <div className="movies">
-      {content &&
-        content.map((c) => (
-          <SingleContent
-            key={c.id}
-            id={c.id}
-            poster={c.poster_path}
-            title={c.title || c.name}
-            date={c.first_air_date || c.release_date}
-            media_type="movie"
-            vote_average={c.vote_average}
-          />
-        ))}
+        {content &&
+          content.map((c) => (
+            <SingleContent
+              key={c.id}
+              id={c.id}
+              poster={c.poster_path}
+              title={c.title || c.name}
+              date={c.first_air_date || c.release_date}
+              media_type="movie"
+              vote_average={c.vote_average}
+            />
+          ))}
       </div>
     </div>
   )
   return (
     <div>
-      <h1 className='movie-text'>Discover Movies</h1>
+      <h1 className="movie-text">Discover Movies</h1>
       <Genres
         type="movie"
         selectedGenres={selectedGenres}
         setSelectedGenres={setSelectedGenres}
         genres={genres}
         setGenres={setGenres}
-        setPage={setPage} 
+        setPage={setPage}
       />
       {isLoading ? <LoadingSpinner /> : renderContent}
       {numOfPages > 1 && (

@@ -9,6 +9,33 @@
   font-size: 40px;
   margin-top: 0;
 }
+.search-header-btn{
+  display: flex;
+  margin-left: 7rem;
+  margin-bottom: 20px;
+}
+.btn-search {
+  margin-right: 1rem;
+}
+.btn-search button {
+  background: #ffffff;
+  border: 1px solid #db0000;
+  border-radius: 10px;
+  height: 2.3rem;
+  width: 10rem;
+  font-size: 14px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
+  cursor: pointer;
+  color: #1f1e1e;
+}
+.btn-search:hover {
+  transform: scale(0.1.1, 1.1);
+  margin-top: 3px;
+}
 .error {
   color: red;
 }

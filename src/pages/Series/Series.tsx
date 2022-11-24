@@ -1,20 +1,25 @@
 import './Series.css'
 import SingleContent from '../../components/SingleContent.jsx/SingleContent'
 import { useState, useEffect } from 'react'
-import { PageProps, seriesSelectedGenresProps, seriesGenresProps } from '../../models/interface'
+import {
+  PageProps,
+  seriesSelectedGenresProps,
+  seriesGenresProps,
+} from '../../models/interface'
 import CustomPagination from '../../components/Pagination/CustomPagination'
 import axios from 'axios'
 import { LoadingSpinner } from '../../components/Spinner/LoadingSpinner'
 import { Genres } from '../../components/Genres/Genres'
 import { UseGenre } from '../../components/Hooks/UseGenre'
 
-
 export const Series = () => {
   const [page, setPage] = useState<number>(1)
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [content, setContent] = useState<PageProps[]>([])
   const [numOfPages, setNumOfPages] = useState(0)
-  const [selectedGenres, setSelectedGenres] = useState<seriesSelectedGenresProps[]>([]);
+  const [selectedGenres, setSelectedGenres] = useState<
+    seriesSelectedGenresProps[]
+  >([])
   const [genres, setGenres] = useState<seriesGenresProps[]>([])
   const genreforURL = UseGenre(selectedGenres)
   const fetchTrending = async () => {
@@ -49,14 +54,14 @@ export const Series = () => {
   )
   return (
     <div>
-      <h1 className='series-text'>Discover Series</h1>
+      <h1 className="series-text">Discover Series</h1>
       <Genres
         type="tv"
         selectedGenres={selectedGenres}
         setSelectedGenres={setSelectedGenres}
         genres={genres}
         setGenres={setGenres}
-        setPage={setPage} 
+        setPage={setPage}
       />
       {isLoading ? <LoadingSpinner /> : renderContent}
       {numOfPages > 1 && (

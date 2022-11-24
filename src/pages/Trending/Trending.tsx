@@ -43,7 +43,7 @@ export const Trending = () => {
   )
   return (
     <div>
-      <h1 className='trending-text'>Trending</h1>
+      <h1 className="trending-text">Trending</h1>
       {isLoading ? <LoadingSpinner /> : renderContent}
       {numOfPages > 1 && (
         <CustomPagination
