@@ -28,15 +28,11 @@ export const Genres = ({
     const { data } = await axios.get(
       `https://api.themoviedb.org/3/genre/${type}/list?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
     )
-    console.log('genres', genres)
     setGenres(data.genres)
   }
   useEffect(() => {
     fetchGenres()
-    // return () => {
-    //   setGenres()
-    // }
-    // eslint-disable-next-line
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

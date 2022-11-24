@@ -28,10 +28,8 @@ export const Movies = () => {
     )
     setContent(data.results)
     setNumOfPages(data.total_pages)
-    // console.log('genresMovie', genres)
     setIsLoading(false)
   }
-  console.log('genreForUrl', genreforURL)
   useEffect(() => {
     window.scroll(0, 0)
     setIsLoading(true)

@@ -36,9 +36,7 @@ a {
   color: #1f1e1e;
   text-decoration: none;
 }
-/* #dark .logo {
-  color: #ffffff;
-} */
+
 .search {
   display: flex;
   position: relative;
@@ -65,9 +63,6 @@ a {
 ::placeholder {
   color: #595959;
 }
-/* .btn {
-  margin-left: 4rem;
-} */
 .btn {
   margin-right: 3rem;
 }
@@ -86,10 +81,6 @@ a {
   cursor: pointer;
   color: #1f1e1e;
 }
-/* #dark .btn button {
-  height: 2.5rem;
-  margin-top: 2px;
-} */
 .btn:hover {
   transform: scale(0.1.1, 1.1);
   margin-top: 3px;
@@ -103,12 +94,6 @@ a {
 .switch label {
   padding-right: 10px;
 }
-/* #dark .switch label {
-  color: #ffffff;
-} */
-/* .modal-container{
-  z-index: -1;
-} */
 .modal {
   position: absolute;
   top: 0px;

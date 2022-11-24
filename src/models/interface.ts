@@ -5,9 +5,9 @@ export interface singleContentProps {
   date: string
   media_type: string
   vote_average: string
-  
 }
 export interface PageProps {
+  overview: string
   id: number
   poster_path: string
   title: string
@@ -18,7 +18,7 @@ export interface PageProps {
   vote_average: string
   // setFilterBy: (media_type: string)=> void
 }
-export interface resultProps{
+export interface resultProps {
   // setFilterBy: (media_type: string)=> void
   // setFilterBy: PageProps.media_type
 }
