@@ -22,10 +22,10 @@ export const Header = () => {
     }
   }
   const SignOut = () => {
-   JSON.stringify(localStorage.removeItem('dataKey'));
-  //  setUserData([])
-  };
-  const user = JSON.parse(localStorage.getItem('dataKey') as string) || null;
+    JSON.stringify(localStorage.removeItem('dataKey'))
+    //  setUserData([])
+  }
+  const user = JSON.parse(localStorage.getItem('dataKey') as string) || null
   // setUserData(user)
 
   // useEffect(() => {
@@ -33,7 +33,7 @@ export const Header = () => {
   //   const user = JSON.parse(localStorage.getItem('dataKey') as string);
   //   // setUserData(user)
   // }
-  // }, [userData]) 
+  // }, [userData])
   return (
     <div>
       <div className="header">
@@ -64,18 +64,19 @@ export const Header = () => {
               <button>Sign Up</button>
             </div>
         </Link> */}
-        {user ? 
-           <Link to="/" onClick={ SignOut }>
-           <div className="btn">
-             <button>Log Out</button>
-           </div>
-         </Link> :
+        {user ? (
+          <Link to="/" onClick={SignOut}>
+            <div className="btn">
+              <button>Log Out</button>
+            </div>
+          </Link>
+        ) : (
           <Link to="./signUp">
             <div className="btn">
               <button>Sign Up</button>
             </div>
           </Link>
-        }
+        )}
       </div>
       <div>
         <Modal

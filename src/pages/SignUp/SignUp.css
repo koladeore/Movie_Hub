@@ -1,43 +1,43 @@
-.auth-form-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 67vh;
-    text-align: center;
+.auth-form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 67vh;
+  text-align: center;
 }
-.auth-form-container .register-form{
-    display: flex;
-    flex-direction: column;
+.auth-form-container .register-form {
+  display: flex;
+  flex-direction: column;
 }
-.register-form label{
-    text-align: left;
-    padding: 0.1rem 0;
+.register-form label {
+  text-align: left;
+  padding: 0.1rem 0;
 }
-.register-form input{
-    width: 15rem;
-    margin: 0.5rem 0;
-    padding: 0.5rem 2rem;
-    border: none;
-    border-radius: 10px;
-    border: 2px solid #ececec;
+.register-form input {
+  width: 15rem;
+  margin: 0.5rem 0;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 10px;
+  border: 2px solid #ececec;
 }
-.register-form ::placeholder{
-    font-size: 12px;
+.register-form ::placeholder {
+  font-size: 12px;
 }
-.submit-btn{
-    border: none;
-    padding: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: #db0000;
-    color: #ffffff;
-    margin-top: 20px;
-    font-size: 15px;
-    font-weight: bold;
+.submit-btn {
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #db0000;
+  color: #ffffff;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: bold;
 }
-.submit-btn:hover{
-    background-color: #b80e0e;
+.submit-btn:hover {
+  background-color: #b80e0e;
 }
-.error{
-    color: #d92027
+.error {
+  color: #d92027;
 }

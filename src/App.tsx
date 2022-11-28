@@ -9,7 +9,6 @@ import { Search } from './pages/Search/Search'
 import { Details } from './pages/Details/Details'
 import { SignUp } from './pages/SignUp/SignUp'
 
-
 function App() {
   return (
     <BrowserRouter>
