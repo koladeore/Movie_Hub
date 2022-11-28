@@ -16,11 +16,6 @@ export interface PageProps {
   name: string
   media_type: string
   vote_average: string
-  // setFilterBy: (media_type: string)=> void
-}
-export interface resultProps {
-  // setFilterBy: (media_type: string)=> void
-  // setFilterBy: PageProps.media_type
 }
 
 export interface SetPageProps {
@@ -80,4 +75,10 @@ export interface seriesGenresProps {
 export interface seriesSelectedGenresProps {
   id: string | number
   name: string
+}
+export interface MyFormValues {
+  userName: string
+  email: string
+  password: string | number
+  confirmPassword: string | number
 }

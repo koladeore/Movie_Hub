@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Modal from 'react-modal'
 import './Header.css'
 import {
@@ -14,12 +14,26 @@ Modal.setAppElement('#root')
 export const Header = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const [value, setValue] = useState('')
+  // const [userData, setUserData] = useState([])
   const navigate = useNavigate()
   const handleSearch = (e: { key: string }) => {
     if (value && e.key === 'Enter') {
       navigate('/search', { state: value, replace: true })
     }
   }
+  const SignOut = () => {
+   JSON.stringify(localStorage.removeItem('dataKey'));
+  //  setUserData([])
+  };
+  const user = JSON.parse(localStorage.getItem('dataKey') as string) || null;
+  // setUserData(user)
+
+  // useEffect(() => {
+  // if(localStorage.getItem('dataKey') !== null){
+  //   const user = JSON.parse(localStorage.getItem('dataKey') as string);
+  //   // setUserData(user)
+  // }
+  // }, [userData]) 
   return (
     <div>
       <div className="header">
@@ -45,9 +59,23 @@ export const Header = () => {
             onKeyDown={handleSearch}
           />
         </div>
-        <div className="btn">
-          <button>Sign Up</button>
-        </div>
+        {/* <Link to="./signUp">
+            <div className="btn">
+              <button>Sign Up</button>
+            </div>
+        </Link> */}
+        {user ? 
+           <Link to="/" onClick={ SignOut }>
+           <div className="btn">
+             <button>Log Out</button>
+           </div>
+         </Link> :
+          <Link to="./signUp">
+            <div className="btn">
+              <button>Sign Up</button>
+            </div>
+          </Link>
+        }
       </div>
       <div>
         <Modal

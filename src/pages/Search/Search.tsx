@@ -17,7 +17,6 @@ export const Search = () => {
   const { state }: stateProps = useLocation()
   const fetchSearch = async () => {
     try {
-      console.log('filterBy.length', filterBy.length)
       if (filterBy.length === 0) {
         const { data } = await axios.get(
           `https://api.themoviedb.org/3/search/multi?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${state}&page=${page}&include_adult=false`

@@ -1,65 +1,65 @@
-.detail-container{
-    display: flex;
-    margin-top: -40px;
+.detail-container {
+  display: flex;
+  margin-top: -40px;
 }
-.detail-img{
-    width: 100%;
-    margin-left: 40px;
+.detail-img {
+  width: 100%;
+  margin-left: 40px;
 }
 .detail-img img {
-    width: 70%;
-    object-fit: cover;
-    height: 500px;
-    border-radius: 10px;
+  width: 70%;
+  object-fit: cover;
+  height: 500px;
+  border-radius: 10px;
 }
-.detail-content h1{
-    margin-top: 60px;
-    font-size: 40px;
-    font-weight: 400;
+.detail-content h1 {
+  margin-top: 60px;
+  font-size: 40px;
+  font-weight: 400;
 }
-.detail-overview h3{
-    font-size: 25px;
-    font-weight: 300;
+.detail-overview h3 {
+  font-size: 25px;
+  font-weight: 300;
 }
-.detail-overview p{
-    padding-top: -20px; 
+.detail-overview p {
+  padding-top: -20px;
 }
-.watch-trailer{
-    margin-top: 40px;
+.watch-trailer {
+  margin-top: 40px;
 }
 .watch-trailer button {
-    background: #ffffff;
-    border: 1px solid #db0000;
-    border-radius: 10px;
-    height: 2.3rem;
-    width: 10rem;
-    font-size: 14px;
-    box-sizing: border-box;
-    align-items: center;
-    justify-content: center;
-    transform: scale(1, 1);
-    transition: transform 0.5s ease;
-    cursor: pointer;
-    color: #1f1e1e;
+  background: #ffffff;
+  border: 1px solid #db0000;
+  border-radius: 10px;
+  height: 2.3rem;
+  width: 10rem;
+  font-size: 14px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
+  cursor: pointer;
+  color: #1f1e1e;
 }
 .watch-trailer button:hover {
-    background-color: #db0000;
-    color: #ffffff;
+  background-color: #db0000;
+  color: #ffffff;
 }
 @media (max-width: 1000px) {
-    .detail-img img {
-        width: 100%;
-    }
-    .detail-content{
-        padding-left: 35px;
-    }
+  .detail-img img {
+    width: 100%;
+  }
+  .detail-content {
+    padding-left: 35px;
+  }
 }
 @media (max-width: 768px) {
-    .detail-img img {
-        width: 80%;
-    }
-    .detail-container{
-        display: flex;
-        flex-direction: column;
-    }
+  .detail-img img {
+    width: 80%;
+  }
+  .detail-container {
+    display: flex;
+    flex-direction: column;
+  }
 }
