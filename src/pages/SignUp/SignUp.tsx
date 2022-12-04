@@ -1,4 +1,4 @@
-import { FC, useEffect} from 'react'
+import { FC, useEffect } from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { MyFormValues } from '../../models/interface'
@@ -6,9 +6,9 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import './SignUp.css'
 
 export const SignUp: FC<{}> = () => {
-  let navigate = useNavigate();
-  let location = useLocation();
-  let from = location.state?.from || "/";
+  let navigate = useNavigate()
+  let location = useLocation()
+  let from = location.state?.from || '/'
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('dataKey') as string)
@@ -43,7 +43,7 @@ export const SignUp: FC<{}> = () => {
         })}
         onSubmit={(values) => {
           localStorage.setItem('dataKey', JSON.stringify(values))
-          navigate(from, { replace: true });
+          navigate(from, { replace: true })
         }}
       >
         <Form className="register-form">

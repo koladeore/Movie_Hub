@@ -73,9 +73,7 @@ export const Search = () => {
     <div>
       <div className="search-header-btn">
         <div className="btn-search">
-          <button
-            onClick={() => filterByOption('movie')}
-          >
+          <button onClick={() => filterByOption('movie')}>
             Filter By Movie
           </button>
         </div>
