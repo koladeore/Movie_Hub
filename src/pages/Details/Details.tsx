@@ -1,17 +1,11 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
 import { PageProps } from '../../models/interface'
 import './Details.css'
 import { img_500, unavailable } from '../../config/config'
 
 export const Details = () => {
-  const navigate = useNavigate()
-  // const user = JSON.parse(localStorage.getItem('dataKey') as string) || null;
-  // if(!user){
-  //   window.location.replace('http://localhost:3000/signUp')
-  // }
   const [content, setContent] = useState<PageProps>()
   const [video, setVideo] = useState()
   const params = useParams()

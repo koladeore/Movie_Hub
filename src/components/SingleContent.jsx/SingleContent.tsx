@@ -11,8 +11,8 @@ const SingleContent: FC<singleContentProps> = ({
   date,
   media_type,
 }) => {
-  return localStorage.getItem('dataKey') === null ? (
-    <a href={'http://localhost:3000/signUp'}>
+  return localStorage.getItem('dataKey') === null   ? (
+    <Link to={'./signUp'}  state={{ from: `/details/${id}${media_type}` }} replace>
       <div className="posters">
         <div className="poster-content">
           <img src={poster ? `${img_300}${poster}` : unavailable} alt={title} />
@@ -23,9 +23,9 @@ const SingleContent: FC<singleContentProps> = ({
           </span>
         </div>
       </div>
-    </a>
+    </Link>
   ) : (
-    <Link to={`/details/${id}${media_type}`}>
+    <Link to={`/details/${id}${media_type}`} >
       <div className="posters">
         <div className="poster-content">
           <img src={poster ? `${img_300}${poster}` : unavailable} alt={title} />

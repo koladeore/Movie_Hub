@@ -11,10 +11,6 @@
   position: fixed;
   top: 0;
 }
-/* #dark .header {
-  background-color: #1f1e1e;
-  border-bottom: 1px solid #ececec;
-} */
 .menu-bar {
   cursor: pointer;
   transform: scale(1, 1);
@@ -167,7 +163,6 @@ a {
   cursor: pointer;
   width: 12rem;
   height: 2.3rem;
-  /* font-size: 20px; */
 }
 .btn-link:hover {
   transform: scale(0.1.1, 1.1);

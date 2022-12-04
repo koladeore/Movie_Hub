@@ -13,7 +13,6 @@ export const Search = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [content, setContent] = useState<PageProps[]>([])
   const [numOfPages, setNumOfPages] = useState(0)
-  // const [value, setValue] = useState('')
   const { state }: stateProps = useLocation()
   const fetchSearch = async () => {
     try {
@@ -75,7 +74,6 @@ export const Search = () => {
       <div className="search-header-btn">
         <div className="btn-search">
           <button
-            // value={state}
             onClick={() => filterByOption('movie')}
           >
             Filter By Movie

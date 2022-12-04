@@ -1,22 +1,21 @@
-import { FC, useEffect, useState } from 'react'
+import { FC, useEffect} from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { MyFormValues } from '../../models/interface'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import './SignUp.css'
 
 export const SignUp: FC<{}> = () => {
-  const [error, setError] = useState(false)
-  // const [alertMessage, setAlertMessage] = useState('');
-  const [data, setData] = useState([])
-  const navigate = useNavigate()
+  let navigate = useNavigate();
+  let location = useLocation();
+  let from = location.state?.from || "/";
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('dataKey') as string)
     if (user) {
       navigate('/')
     }
-  }, [])
+  }, [navigate])
   const initialValues: MyFormValues = {
     userName: '',
     email: '',
@@ -25,7 +24,6 @@ export const SignUp: FC<{}> = () => {
   }
   return (
     <div className="auth-form-container">
-      {/* <h2>Sign Up</h2> */}
       <Formik
         initialValues={initialValues}
         validationSchema={Yup.object({
@@ -43,16 +41,9 @@ export const SignUp: FC<{}> = () => {
             .oneOf([Yup.ref('password'), null], 'Passwords must match')
             .required('confirm the password'),
         })}
-        onSubmit={(values, { setSubmitting }) => {
+        onSubmit={(values) => {
           localStorage.setItem('dataKey', JSON.stringify(values))
-          return navigate('/')
-          // const user = JSON.parse(localStorage.getItem('dataKey') as string);
-          // console.log('user', user)
-          // return navigate('/')
-          // setTimeout(() => {
-          //     setError(true);
-          //     setSubmitting(false);
-          // }, 500);
+          navigate(from, { replace: true });
         }}
       >
         <Form className="register-form">
