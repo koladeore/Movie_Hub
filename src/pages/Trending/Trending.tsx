@@ -18,12 +18,14 @@ export const Trending = () => {
         `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
       )
       setTimeout(() => {
-        const { data: { results, total_pages } } = response
-        console.log(response);
-        setContent(results);
-        setNumOfPages(total_pages);
-        setIsLoading(false);
-      }, 100); 
+        const {
+          data: { results, total_pages },
+        } = response
+        console.log(response)
+        setContent(results)
+        setNumOfPages(total_pages)
+        setIsLoading(false)
+      }, 100)
     } catch (error) {
       console.error(error)
     }

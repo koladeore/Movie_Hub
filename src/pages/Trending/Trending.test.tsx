@@ -1,23 +1,6 @@
-// import { render, screen } from '@testing-library/react'
-// import { Series } from './Series'
-// import axios from 'axios';
-
-// jest.mock('axios');
-// describe('Series component', () => {
-//   // beforeEach(() => {
-//   //   jest.resetAllMocks()
-//   // })
-
-//   it('should render Discover Series text', async () => {
-//     render(<Series />)
-
-//     expect(screen.getByText('Discover Series')).toBeInTheDocument()
-// })
-// })
-import { render, screen, waitFor } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { Trending } from './Trending'
 import axios from 'axios'
-import { act } from 'react-dom/test-utils';
 
 jest.mock('axios')
 
@@ -40,15 +23,15 @@ describe('Trending component', () => {
           title: 'Ghosted',
           release_date: '2023-04-21',
           media_type: 'movie',
-          vote_average: 7.5
-        }
+          vote_average: 7.5,
+        },
       ],
       total_pages: 1000,
     }
-    const resp = {data: data};
-    (axios.get as jest.Mock).mockResolvedValueOnce(resp);
+    const resp = { data: data }
+    ;(axios.get as jest.Mock).mockResolvedValueOnce(resp)
     render(<Trending />)
-    expect(data.results[0].title).toEqual('Ghosted');
-    expect(data.total_pages).toEqual(1000);
+    expect(data.results[0].title).toEqual('Ghosted')
+    expect(data.total_pages).toEqual(1000)
   })
 })
