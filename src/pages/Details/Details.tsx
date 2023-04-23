@@ -1,17 +1,20 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { PageProps } from '../../models/interface'
 import './Details.css'
 import { img_500, unavailable } from '../../config/config'
+// import { useNavigate } from 'react-router-dom'
 
 export const Details = () => {
+  let navigate = useNavigate()
   const [content, setContent] = useState<PageProps>()
   const [video, setVideo] = useState()
   const params = useParams()
   const { id } = params
   const getId = id?.substring(0, 6)
   const getMediaType = id?.substring(6)
+  // console.log('user', user)
   const navigateToExternalUrl = (
     url: string,
     shouldOpenNewTab: boolean = true
@@ -30,6 +33,10 @@ export const Details = () => {
     setVideo(data.results[0]?.key)
   }
   useEffect(() => {
+    const user = JSON.parse(localStorage.getItem('dataKey') as string)
+    if (user === null) {
+      navigate('/signUp')
+    }
     fetchData()
     fetchVideo()
     // eslint-disable-next-line react-hooks/exhaustive-deps

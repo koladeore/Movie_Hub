@@ -12,12 +12,21 @@ export const Trending = () => {
   const [content, setContent] = useState<PageProps[]>([])
   const [numOfPages, setNumOfPages] = useState(0)
   const fetchTrending = async () => {
-    const { data } = await axios.get(
-      `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
-    )
-    setContent(data.results)
-    setNumOfPages(data.total_pages)
-    setIsLoading(false)
+    setIsLoading(true)
+    try {
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
+      )
+      setTimeout(() => {
+        const { data: { results, total_pages } } = response
+        console.log(response);
+        setContent(results);
+        setNumOfPages(total_pages);
+        setIsLoading(false);
+      }, 100); 
+    } catch (error) {
+      console.error(error)
+    }
   }
   useEffect(() => {
     window.scroll(0, 0)
@@ -44,7 +53,9 @@ export const Trending = () => {
   return (
     <div>
       <h1 className="trending-text">Trending</h1>
-      {isLoading ? <LoadingSpinner /> : renderContent}
+      <div data-testid="loading-spinner">
+        {isLoading ? <LoadingSpinner /> : renderContent}
+      </div>
       {numOfPages > 1 && (
         <CustomPagination
           setPage={setPage}

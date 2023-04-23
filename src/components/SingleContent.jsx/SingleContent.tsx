@@ -33,7 +33,7 @@ const SingleContent: FC<singleContentProps> = ({
       <div className="posters">
         <div className="poster-content">
           <img src={poster ? `${img_300}${poster}` : unavailable} alt={title} />
-          <h2>{title}</h2>
+          <h2 data-testid="testing_head">{title}</h2>
           <span>
             <h3>{media_type === 'tv' ? 'TV Series' : 'Movie'}</h3>
             <h3>{date}</h3>

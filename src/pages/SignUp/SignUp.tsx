@@ -23,7 +23,9 @@ export const SignUp: FC<{}> = () => {
     confirmPassword: '',
   }
   return (
-    <div className="auth-form-container">
+    <div>
+      <h1>Sign Up</h1>
+      <div className="auth-form-container">
       <Formik
         initialValues={initialValues}
         validationSchema={Yup.object({
@@ -49,6 +51,7 @@ export const SignUp: FC<{}> = () => {
         <Form className="register-form">
           <label htmlFor="userName">User Name</label>
           <Field
+            id="userName"
             name="userName"
             type="text"
             placeholder="Enter your user name"
@@ -60,11 +63,12 @@ export const SignUp: FC<{}> = () => {
           />
 
           <label htmlFor="email">Email Address</label>
-          <Field name="email" type="email" placeholder="Enter your email" />
+          <Field id="email" name="email" type="email" placeholder="Enter your email" />
           <ErrorMessage component="email" className="error" name="email" />
 
           <label htmlFor="password">Password</label>
           <Field
+            id="password"
             name="password"
             type="password"
             placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
@@ -77,6 +81,7 @@ export const SignUp: FC<{}> = () => {
 
           <label htmlFor="confirmPassword">Confirm Password</label>
           <Field
+             id="confirmPassword"
             name="confirmPassword"
             type="password"
             placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
@@ -86,12 +91,14 @@ export const SignUp: FC<{}> = () => {
             className="error"
             name="confirmPassword"
           />
-
           <button className="submit-btn" type="submit">
             Submit
           </button>
-        </Form>
-      </Formik>
+         </Form>
+        </Formik>
+        {/* <label htmlFor="hi">hi</label> */}
+      </div>
     </div>
+
   )
 }

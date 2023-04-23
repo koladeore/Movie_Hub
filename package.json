@@ -4,15 +4,15 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.12.4",
-    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.0.0",
-    "@testing-library/user-event": "^13.2.1",
-    "@types/jest": "^27.0.1",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^27.5.2",
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@types/react-modal": "^3.13.1",
-    "axios": "^1.1.3",
+    "axios": "0.27.2",
     "formik": "^2.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -29,16 +29,18 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "eslint --ignore-path .gitignore .",
     "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx,css,scss}\"",
+    "coverage": "yarn test --coverage --watchAll --collectCoverageFrom='src/**/*.{ts,tsx}' --collectCoverageFrom='!src/components/**/*.{types,stories,constants,test,spec}.{ts,tsx}'",
     "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest",
+      "plugin:jest-dom/recommended",
       "eslint-config-prettier"
     ]
   },
@@ -56,8 +58,11 @@
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest-dom": "^4.0.2",
     "husky": "^8.0.0",
+    "jest-localstorage-mock": "^2.4.26",
     "lint-staged": "^13.0.3",
+    "msw": "^0.49.1",
     "prettier": "2.7.1"
   },
   "lint-staged": {
