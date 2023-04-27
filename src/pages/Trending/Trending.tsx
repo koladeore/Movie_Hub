@@ -21,7 +21,6 @@ export const Trending = () => {
         const {
           data: { results, total_pages },
         } = response
-        console.log(response)
         setContent(results)
         setNumOfPages(total_pages)
         setIsLoading(false)

@@ -23,12 +23,21 @@ export const Series = () => {
   const [genres, setGenres] = useState<seriesGenresProps[]>([])
   const genreforURL = UseGenre(selectedGenres)
   const fetchSeries = async () => {
-    const { data } = await axios.get(
-      `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genreforURL}`
-    )
-    setContent(data.results)
-    setNumOfPages(data.total_pages)
-    setIsLoading(false)
+    try {
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genreforURL}`
+      )
+       setTimeout(() => {
+        const {
+          data: { results, total_pages },
+        } = response
+        setContent(results)
+        setNumOfPages(total_pages)
+        setIsLoading(false)
+      }, 100)
+    } catch (error) {
+      console.error(error)
+    }
   }
   useEffect(() => {
     window.scroll(0, 0)
@@ -63,7 +72,9 @@ export const Series = () => {
         setGenres={setGenres}
         setPage={setPage}
       />
-      {isLoading ? <LoadingSpinner /> : renderContent}
+      <div data-testid="loading-spinner">
+        {isLoading ? <LoadingSpinner /> : renderContent}
+      </div>
       {numOfPages > 1 && (
         <CustomPagination
           setPage={setPage}
