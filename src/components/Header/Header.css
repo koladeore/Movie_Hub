@@ -16,9 +16,6 @@
   transform: scale(1, 1);
   transition: transform 0.5s ease;
 }
-.menu-bar:hover {
-  transform: scale(1.1, 1.1);
-}
 .head-one {
   display: flex;
   align-items: center;
@@ -78,7 +75,6 @@ a {
   color: #1f1e1e;
 }
 .btn:hover {
-  transform: scale(0.1.1, 1.1);
   margin-top: 3px;
 }
 .switch {
@@ -129,16 +125,10 @@ a {
   background-color: Transparent;
   background-repeat: no-repeat;
 }
-.menu-bar-sideBar:hover {
-  transform: scale(1.1, 1.1);
-}
 .modal-head a {
   font-size: 20px;
   cursor: pointer;
   margin-top: -8px;
-}
-.modal-head a:hover {
-  transform: scale(1.1, 1.1);
 }
 .btn-list {
   margin-top: 40px;
@@ -165,7 +155,6 @@ a {
   height: 2.3rem;
 }
 .btn-link:hover {
-  transform: scale(0.1.1, 1.1);
   background-color: rgba(0, 0, 0, 0.5);
   border: 0;
 }
