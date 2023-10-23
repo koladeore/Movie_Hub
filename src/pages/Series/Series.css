@@ -1,31 +1,31 @@
 .series {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-grid-gap: 1.5rem;
-cursor: pointer;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.5rem;
+  cursor: pointer;
 }
 .series-text {
-margin-left: 30px;
-margin-top: -30px;
+  margin-left: 30px;
+  margin-top: -30px;
 }
 @media (max-width: 1200px) {
-.series {
+  .series {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1.5rem;
-}
+  }
 }
 @media (max-width: 768px) {
-.series {
+  .series {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
-}
+  }
 }
 @media (max-width: 640px) {
-.series {
+  .series {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 1rem;
-}
+  }
 }

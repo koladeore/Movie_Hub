@@ -28,11 +28,10 @@ describe('Trending component', () => {
       ],
       total_pages: 1000,
     }
-    const resp = { data: data };
-    (axios.get as jest.Mock).mockResolvedValueOnce(resp)
+    const resp = { data: data }
+    ;(axios.get as jest.Mock).mockResolvedValueOnce(resp)
     render(<Trending />)
     expect(data.results[0].title).toEqual('Ghosted')
     expect(data.total_pages).toEqual(1000)
   })
 })
-
