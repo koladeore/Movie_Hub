@@ -24,7 +24,7 @@ export const SignUp: FC<{}> = () => {
   }
   return (
     <div>
-      <h1>Sign Up</h1>
+      <h1 className="signUp-text">Sign Up</h1>
       <div className="auth-form-container">
         <Formik
           initialValues={initialValues}
